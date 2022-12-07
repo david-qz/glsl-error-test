@@ -62,10 +62,22 @@ log('===========================================================================
 compileShaderAndLog(shaders.dimensionMismatchVertexShader, gl.VERTEX_SHADER);
 
 log('');
+log('Missing Semicolon');
+log('================================================================================');
+
+compileShaderAndLog(shaders.missingSemicolon, gl.FRAGMENT_SHADER);
+
+log('');
 log('Missing precision');
 log('================================================================================');
 
 compileShaderAndLog(shaders.missingDimensionInFragmentShader, gl.FRAGMENT_SHADER);
+
+log('');
+log('Bad version directive');
+log('================================================================================');
+
+compileShaderAndLog(shaders.badVersionDirective, gl.FRAGMENT_SHADER);
 
 log('');
 log('Link failure');

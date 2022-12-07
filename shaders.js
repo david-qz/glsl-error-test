@@ -11,6 +11,20 @@ export const missingDimensionInFragmentShader =
 }
 `;
 
+export const missingSemicolon =
+`void main() {
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0)
+}
+`;
+
+export const badVersionDirective =
+`#version 300
+
+void main() {
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0)
+}
+`;
+
 export const linkIssueVertexShader =
 `attribute vec3 aVertexPosition;
 attribute vec3 aVertexNormal;
