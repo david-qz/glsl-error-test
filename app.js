@@ -61,11 +61,13 @@ log('===========================================================================
 
 compileShaderAndLog(shaders.dimensionMismatchVertexShader, gl.VERTEX_SHADER);
 
+log('');
 log('Missing precision');
 log('================================================================================');
 
 compileShaderAndLog(shaders.missingDimensionInFragmentShader, gl.FRAGMENT_SHADER);
 
+log('');
 log('Link failure');
 log('================================================================================');
 
@@ -73,6 +75,7 @@ let vs = compileShaderAndLog(shaders.linkIssueVertexShader, gl.VERTEX_SHADER);
 let fs = compileShaderAndLog(shaders.linkIssueFragmentShader, gl.FRAGMENT_SHADER);
 linkShadersAndLog(vs, fs);
 
+log('');
 log('Link failure #version 300 es');
 log('================================================================================');
 
