@@ -1,0 +1,9 @@
+pre {
+    font-family: monospace;
+    padding: 20px;
+    border: 1px solid darkgray;
+}
+
+canvas {
+    display: none;
+}
