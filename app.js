@@ -69,6 +69,13 @@ compileShaderAndLog(shaders.missingDimensionInFragmentShader, gl.FRAGMENT_SHADER
 log('Link failure');
 log('================================================================================');
 
-const vs = compileShaderAndLog(shaders.linkIssueVertexShader, gl.VERTEX_SHADER);
-const fs = compileShaderAndLog(shaders.linkIssueFragmentShader, gl.FRAGMENT_SHADER);
+let vs = compileShaderAndLog(shaders.linkIssueVertexShader, gl.VERTEX_SHADER);
+let fs = compileShaderAndLog(shaders.linkIssueFragmentShader, gl.FRAGMENT_SHADER);
+linkShadersAndLog(vs, fs);
+
+log('Link failure #version 300 es');
+log('================================================================================');
+
+vs = compileShaderAndLog(shaders.version3ESLinkIssueVertex, gl.VERTEX_SHADER);
+fs = compileShaderAndLog(shaders.version3ESLinkIssueFragment, gl.FRAGMENT_SHADER);
 linkShadersAndLog(vs, fs);
