@@ -11,6 +11,19 @@ if (!gl) {
   throw new Error('WebGL2 not supported :(');
 }
 
+log('VERSION: ' + gl.getParameter(gl.VERSION));
+log('VENDOR: ' + gl.getParameter(gl.VENDOR));
+log('RENDERER: ' + gl.getParameter(gl.RENDERER));
+log('SHADING LANGUAGE VERSION: ' + gl.getParameter(gl.SHADING_LANGUAGE_VERSION));
+
+const debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
+const vendor = gl.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL);
+const renderer = gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL);
+
+log('UNMASKED VENDOR: ' + vendor);
+log('UNMASKED RENDERER: ' + renderer);
+log('');
+
 function compileShaderAndLog(source, type) {
 
   let shader = gl.createShader(type);
